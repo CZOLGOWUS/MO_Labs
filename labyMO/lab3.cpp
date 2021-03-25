@@ -69,8 +69,8 @@ using namespace std;
             [](double x) -> double {return sin(x / 4); },
             5.0,
             1000,
-            0.000001,
-            0.000001) << endl << endl;
+            0.0001,
+            0.0001) << endl << endl;
 
         cout << "\naproximation for picards method for tan(2*x) - 1 - x = 0 is: " << picard(
             [](double x) -> double {return tan(2 * x) - 1 - x; },
@@ -363,11 +363,12 @@ using namespace std;
         while (choice != 'e')
         {
             
+            cout << "tolf = 0.0001 | tolx = 0.0001\n";
             cout << "menu:\n";
             cout << "1. Picard method\n";
-            cout << "2. Picard method\n";
-            cout << "3. Picard method\n";
-            cout << "4. Picard method\n";
+            cout << "2. Bisection method\n";
+            cout << "3. Newton method\n";
+            cout << "4. Secant method\n";
             cout << "'e' to exit\n";
             cout << "choose from 1 to 4:";
             cin >> choice;

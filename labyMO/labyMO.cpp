@@ -160,7 +160,5 @@ namespace lab2
 
 int main()
 {
-    
     lab3::test();
-
 }
