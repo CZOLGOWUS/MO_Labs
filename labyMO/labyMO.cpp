@@ -1,10 +1,8 @@
 #include "lab3.cpp"
+#include "lab4.cpp"
 
-#include <iostream>
 #include <fstream>
 #include <cstdio>
-#include <iomanip>
-#include <math.h>
 #include <string>
 #include <sstream>
 
@@ -160,5 +158,5 @@ namespace lab2
 
 int main()
 {
-    lab3::test();
+    lab4::test();
 }

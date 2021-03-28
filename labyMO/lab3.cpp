@@ -203,7 +203,7 @@ using namespace std;
 
             x = xPrev - (fun(xPrev) / funDev(xPrev));
             error = abs(x - xPrev);
-            reziduum = fun(x);
+            reziduum = abs(fun(x));
 
 
             cout << setw(20) << setprecision(10) << x
@@ -253,9 +253,9 @@ using namespace std;
         cout << "\naproximation for Newton method for sin(x/4)  - x = 0 is: " << newton(
             [](double x) -> double {return sin(x / 4) - x; },
             [](double x) -> double {return cos(x / 4) / 4 - 1.0; },
-            0.2516,
+            5.2516,
             1000,
-            0.0001,
+            0.000001,
             0.0001) << endl << endl;
 
 
@@ -338,7 +338,7 @@ using namespace std;
     {
         cout << "\naproximation for secant method for sin(x/4)  - x = 0 is: " << secant(
             [](double x) -> double {return sin(x / 4) - x; },
-            0.2516,
+            5.2516,
             1.24,
             1000,
             0.0001,
