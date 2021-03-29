@@ -36,22 +36,22 @@ namespace lab4
 		fXnArr[2] = ([](double x, double y, double z) -> double {return f3(x, y, z); });
 
 		 //all lambda functions pre calculated
-		lambda2[0] = ([](double x, double y, double z) -> double {return (x * x + 3 * (y * y) + 2 * (x * x) * y - 1) / (2 * x + 4 * x * y); });
-		lambda2[1] = ([](double x, double y, double z) -> double {return (y * y - y - 1) / (2 * y + 1); });
-		lambda2[2] = ([](double x, double y, double z) -> double {return (z*z - 1) / (2 * z); });
+		lambda2[0] = ([](double x, double y, double z) -> double {return (x * x + 3.0 * (y * y) + 2.0 * (x * x) * y - 1.0) / (2.0 * x + 4.0 * x * y); });
+		lambda2[1] = ([](double x, double y, double z) -> double {return (y * y - y - 1.0) / (2.0 * y + 1.0); });
+		lambda2[2] = ([](double x, double y, double z) -> double {return (z*z - 1.0) / (2.0 * z); });
 		
 
 
-		double xn[3] = { 0.8,0.6,2 };
-		double Xnext[3] = { 0 };
+		double xn[3] = { 0.8,0.6,2.0 };
+		double Xnext[3] = { 0.0 };
 
-		double JrevValues[3][3] = { 0 };
-		double fXnArrValues[3] = { 0 };
+		double JrevValues[3][3] = { 0.0 };
+		double fXnArrValues[3] = { 0.0 };
 
-		double lambdaV[3] = { 0 };
+		double lambdaV[3] = { 0.0 };
 
-		double reziduum[3] = { 0 };
-		double error[3] = { 0 };
+		double reziduum[3] = { 0.0 };
+		double error[3] = { 0.0 };
 
 		double tolx = 0.0001;
 		double tolf = 0.0001;
@@ -92,7 +92,6 @@ namespace lab4
 			for (int i = 0; i < 3 ; i++)
 				lambdaV[i] = lambda2[i](xn[0], xn[1], xn[2]);
 			*/
-
 			
 			for (int i = 0; i < 3 ;i++)
 			{
@@ -122,17 +121,17 @@ namespace lab4
 
 			if (n >= maxN)
 			{
-				cout << "iteration over extended";
+				cout << "iteration over extended\n";
 				break;
 			}
 			else if (error[0] <= tolx && error[1] <= tolx && error[2] <= tolx)
 			{
-				cout << "result is in given error tolerance";
+				cout << "result is in given error tolerance\n";
 				break;
 			}
 			else if (reziduum[0] < tolf && reziduum[1] < tolf && reziduum[2] < tolf)
 			{
-				cout << "result is in given reziduum tolerance";
+				cout << "result is in given reziduum tolerance\n";
 				break;
 			}
 			else if (reziduum == 0)
@@ -146,10 +145,12 @@ namespace lab4
 			{
 				xn[i] = Xnext[i];
 				Xnext[i] = 0.0;
-				lambdaV[i] = 0;
+				lambdaV[i] = 0.0;
 			}
 			n++;
 		}
+
+		cout << "approximated values of [x,y,z] are : x = " << xn[0] << " y = " << xn[1] << " z = " << xn[2] << endl;
 
 	}
 

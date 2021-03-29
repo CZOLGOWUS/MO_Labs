@@ -112,7 +112,7 @@ using namespace std;
         {
             x = (a + b) / 2.0;
 
-            if (signbit(x) == signbit(a))
+            if (signbit(fun(x)) == signbit(fun(a)))
                 a = x;
             else
                 b = x;
@@ -163,16 +163,16 @@ using namespace std;
             0.01,
             1000,
             1000,
-            0.0001,
-            0.0001) << endl << endl;
+            0.000001,
+            0.000001) << endl << endl;
 
         cout << "\naproximation for bisection method for tan(2*x) - 1  - x = 0 is: " << bisection(
             [](double x) -> double {return tan(2 * x) - 1 - x; },
             0.01,
             1000,
             1000,
-            0.0001,
-            0.0001) << endl << endl;
+            0.000001,
+            0.000001) << endl << endl;
     }
 
 #pragma endregion
