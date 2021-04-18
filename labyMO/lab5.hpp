@@ -1,6 +1,7 @@
 #include <iostream>
 #include <iomanip>
 #include <vector>
+#include <algorithm>
 
 #pragma once
 
@@ -12,6 +13,7 @@ namespace lab5
 	{
 		vector<vector<float>> L;
 		vector<vector<float>> U;
+		vector<int> changes;
 	};
 
 
