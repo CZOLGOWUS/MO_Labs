@@ -1,19 +1,14 @@
-#include <iostream>
-#include <vector>
-#include <functional>
-#include <iomanip>
+#include "lab4.hpp"
 
 
 using namespace std;
 
 namespace lab4
 {
-#define f1(x,y,z) ((x*x)+(y*y)+(z*z) - 2.0)
-#define f2(x,y,z) ((x*x)+(y*y) - 1.0)
-#define f3(x,y,z) ((x*x)-y)
 
 
-	static void test()
+
+	void test()
 	{
 
 		std::function<double(double, double, double)> Jrev[3][3];

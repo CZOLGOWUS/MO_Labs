@@ -1,8 +1,4 @@
-#include <fstream>
-#include <cstdio>
-#include <sstream>
-#include <cmath>
-#include <iomanip>
+#include "lab2.hpp"
 
 
 namespace lab2
@@ -10,7 +6,7 @@ namespace lab2
     using namespace std;
 #pragma region lab2
 
-    static double exponential(double x, int n)
+    double exponential(double x, int n)
     {
         double sum = 1.0f; // initialize sum of series  
 
@@ -20,7 +16,7 @@ namespace lab2
         return sum;
     }
 
-    static double eToPow(double x, int n)
+    double eToPow(double x, int n)
     {
         static double p = 1, f = 1;
         double r;
@@ -36,12 +32,12 @@ namespace lab2
         return (r + p / f);
     }
 
-    static double NormalFunction(double x)
+    double NormalFunction(double x)
     {
         return (1 - exp(-x)) / x;
     }
 
-    static double TaylorFunction(double x)
+    double TaylorFunction(double x)
     {
 
         if (fabs(x) < 0.5)
@@ -70,7 +66,7 @@ namespace lab2
 
     }
 
-    static void test()
+    void test()
     {
         stringstream sstream;
         string xString;

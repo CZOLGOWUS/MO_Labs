@@ -1,9 +1,4 @@
-
-#include <iostream>
-#include <math.h>
-#include <cmath>
-#include <iomanip>
-
+#include "lab3.hpp"
 
 namespace lab3
 {
@@ -12,7 +7,7 @@ using namespace std;
 
 #pragma region Picard
 
-    static double picard(double (*fun)(double),double (*phi)(double),double xStart,int maxN , double tolx, double tolf)
+    double picard(double (*fun)(double),double (*phi)(double),double xStart,int maxN , double tolx, double tolf)
     {
         double reziduum = abs(fun(xStart));
         double xNew = NULL;
@@ -62,7 +57,7 @@ using namespace std;
 
         return xNew;
     }
-    static void picardTest()
+    void picardTest()
     {
         cout << "\naproximation for picards method for sin(x/4) - x = 0 is: " << picard(
             [](double x) -> double {return sin(x / 4) - x; },
@@ -84,7 +79,7 @@ using namespace std;
 
 #pragma region bisection
 
-    static double bisection(double (*fun)(double),double jumpAmountOfAB,int numberOfJumps, int maxN, double tolx, double tolf)
+    double bisection(double (*fun)(double),double jumpAmountOfAB,int numberOfJumps, int maxN, double tolx, double tolf)
     {
         double a = -2, b = 1;
         double aNew = NULL, bNew = NULL;
@@ -155,8 +150,7 @@ using namespace std;
         return x;
 
     }
-
-    static void bisectionTest()
+    void bisectionTest()
     {
         cout << "\naproximation for bisection method for sin(x/4) - x = 0 is: " << bisection(
             [](double y) -> double {return sin(y / 4) - y; },
@@ -178,12 +172,12 @@ using namespace std;
 #pragma endregion
 
 #pragma region Newton
-    static double newton(double (*fun)(double),double (*funDev)(double),double xStart, int maxN, double tolx, double tolf)
+    double newton(double (*fun)(double),double (*funDev)(double),double xStart, int maxN, double tolx, double tolf)
     {
         double xPrev = xStart;
         double x = xStart;
         double xPrevOld = NULL;
-        int n = 1.0;
+        int n = 1;
         double reziduum = NULL;
         double error = NULL;
 
@@ -248,7 +242,7 @@ using namespace std;
 
     }
 
-    static void newtonTest()
+    void newtonTest()
     {
         cout << "\naproximation for Newton method for sin(x/4)  - x = 0 is: " << newton(
             [](double x) -> double {return sin(x / 4) - x; },
@@ -272,7 +266,7 @@ using namespace std;
 
 #pragma region secant
 
-    static double secant(double (*fun)(double), double xStart1,double xStart2, int maxN, double tolx, double tolf)
+    double secant(double (*fun)(double), double xStart1,double xStart2, int maxN, double tolx, double tolf)
     {
         double xPrevOld = xStart2;
         double xPrev = xStart1;
@@ -334,7 +328,7 @@ using namespace std;
         return x;
     }
 
-    static void secantTest()
+    void secantTest()
     {
         cout << "\naproximation for secant method for sin(x/4)  - x = 0 is: " << secant(
             [](double x) -> double {return sin(x / 4) - x; },
@@ -356,7 +350,7 @@ using namespace std;
 
 #pragma endregion
 
-    static void test()
+    void test()
     {
         char choice = '0';
 

@@ -1,5 +1,4 @@
-#include <iostream>
-#include <iomanip>
+#include "lab1.hpp"
 
 
 namespace lab1
@@ -8,7 +7,7 @@ namespace lab1
 #pragma region lab1
 
     template <typename T>
-    static void zad1Temp()
+    void zad1Temp()
     {
         T epsilon = (T)0;
         T x = (T)1;
@@ -35,7 +34,7 @@ namespace lab1
         cout << "x=" << setprecision(30) << x << " epsilon=" << epsilon << " mantise bits=" << count << endl;
     }
 
-    static void test()
+    void test()
     {
         zad1Temp<float>();
         zad1Temp<double>();
