@@ -4,11 +4,12 @@
 #include "lab4.hpp"
 #include "lab5.hpp"
 #include "lab6.hpp"
-
+#include "lab7.hpp"
+#include "lab8.hpp"
 
 int main()
 {
 
-	lab6::test();
+	lab7::test();
 
 }

@@ -3,7 +3,6 @@
 
 namespace lab5
 {
-
 	int getIndexRowOfMaxValueInCollumn(vector<vector<float>> A, int col)
 	{
 		float max = -INFINITY;
@@ -243,7 +242,6 @@ namespace lab5
 		vector<float> UB = getB(b, LU);
 
 		vector<float> x = { 0,0,0,0 };
-
 
 		x = solveX(LU,UB);
 
