@@ -1,5 +1,8 @@
 #pragma once
 #include <iostream>
+#include <cmath>
+#include <fstream>
+#include <iomanip>
 
 #pragma once
 

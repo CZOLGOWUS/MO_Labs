@@ -10,6 +10,6 @@
 int main()
 {
 
-	lab7::test();
+	lab8::test();
 
 }
