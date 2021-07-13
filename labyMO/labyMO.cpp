@@ -6,10 +6,14 @@
 #include "lab6.hpp"
 #include "lab7.hpp"
 #include "lab8.hpp"
+#include "lab9.hpp"
+#include "lab10.hpp"
+#include "lab11.hpp"
+#include "lab12.hpp"
 
 int main()
 {
 
-	lab8::test();
+	lab12::test();
 
 }
